@@ -1,0 +1,6 @@
+Maket: 
+https://www.figma.com/file/VYEysFjxiWDqEMB6Yp5sCH/Weather-Dashboard-(Community)?type=design&node-id=0-1&mode=design&t=rf2gn4k5QPFU68my-0
+Api: 
+https://www.weatherapi.com/
+login: fefoyap593@gameszox.com
+password: QWERTYqwerty123123@

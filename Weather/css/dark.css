@@ -1,0 +1,46 @@
+.dark {
+    transition: color .50s ease;
+  }
+
+
+body.dark-mode .toggle-label{border: 2px solid #393939;}
+
+body.dark-mode .directionToggle{border: 2px solid #393939;}
+
+body.dark-mode .light_mode{color: #fff;}
+
+body.dark-mode  .search:focus{background-color: #444444;}
+
+body.dark-mode .search, 
+body.dark-mode .search::placeholder{
+  background-color: #444444;
+  color: #757575;
+  border: 1px solid #444444;
+}
+  
+body.dark-mode .weather{color: #fff;}
+
+body.dark-mode .time,
+body.dark-mode .d_forecast,
+body.dark-mode .marks,
+body.dark-mode .hourly 
+{background: #444444;}
+
+body.dark-mode .marks h1{
+    background: linear-gradient(to top, #ffffff, #292929);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-fill-color: transparent; 
+}
+
+body.dark-mode .sunriseText{color: #ffffff;}
+body.dark-mode .feels{
+    color: #ffffff;
+}
+
+body.dark-mode .day_div,
+body.dark-mode .night_div{
+  background: #373636;
+}
+
+body.dark-mode .dGradys{color: #fff;}

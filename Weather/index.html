@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link id="mode_m_d" rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <link rel="stylesheet" href="css/dark.css">
+
+    <!-- favicons -->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="favicons/site.webmanifest">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Weather</title>
+</head>
+<body> 
+
+    <header class="header">
+        <nav>
+            <ul class="navbar">
+                <li>
+                    <form id="weatherForm">
+                        <input type="checkbox" id="directionToggle" class="directionToggle">
+                        <label for="directionToggle" class="toggle-label"></label>
+                        <label class="light_mode dark" id="light_mode">Light Mode</label>
+                    </form>
+                </li>
+                <li>
+                    <form>
+                        <a class="searchBtn dark" id="searchBtn" onclick="generateRandomNumber()"><img class="searchImg dark" src="img/search2.png"></a>                        
+                        <input type="text" placeholder=" Search for your preferred city..." class="search dark" id="search" name="search" oninput="capitalizeFirstLetter(this)">
+                    </form>
+                </li>
+                <li>
+                    <div class="Location" id="btnLocation">
+                        <img src="img/location.png">
+                        <a class="btnLocation">Current Location</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="weather dark" id="weather_div">        
+        <div class="div_left">
+            <div class="time">
+                <h4 id="city_h1">Athens</h4><br>
+                <h1 id="currentTime"></h1><br>
+                <p id="date"></p>
+            </div>
+            <div class="d_forecast">
+                <h1>5 Days Forecast:</h1>
+                <div class="div_Forecast"><img id="imgF_one" src=""> <p id="gradus_one"></p>  <p id="date_one"></p></div>
+                <div class="div_Forecast"><img id="imgF_two" src=""> <p id="gradus_two"></p> <p id="date_two"></p></div>
+                <div class="div_Forecast"><img id="imgF_three" src=""> <p id="gradus_three"></p> <p id="date_three"></p></div>
+                <div class="div_Forecast"><img id="imgF_four" src=""> <p id="gradus_four"></p> <p id="date_four"></p></div>
+                <div class="div_Forecast"><img id="imgF_five" src=""> <p id="gradus_five"></p> <p id="date_five"></p></div>
+            </div>
+        </div>
+        <div class="div_right">
+            <div class="marks">
+                <div class="containerMark">
+                    <div class="marks_left">
+                        <div class="marksD">
+                            <h1 id="temp"></h1>
+                            <p class="feels dark" id="feels"></p>
+                        </div>
+                        <div class="marksSun">
+                            <div class="markSunrise">
+                                <img class="sunriseImg" id="sunriseImg" src="img/Sunrise.png">
+                                <p class="sunriseText dark">Sunrise <br> <span id="timeSunrise" class="timeSun"></span></p>
+                            </div> <br>
+                            <div class="markSunset markSunrise">
+                                <img class="sunriseImg downSun" id="sunsetImg" src="img/Sunset.png">                          
+                                <p class="sunriseText dark">Sunset <br><span id="timeSunset" class="timeSun"></span></p>                     
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="marks_center">
+                        <img id="conditionsImg" class="conditionsImg" src="">
+                        <p class="conditions" id="conditions"></p>
+                    </div>
+
+                    <div class="marks_right">
+                        <div class="m_left">
+                            <div class="humidity">
+                                <img class="humidityImg" id="humidityImg" src="img/humidity.png">
+                                <p class="humidityP" id="hPercentages"></p>
+                                <p class="humidity_p">Humidity</p>
+                            </div>
+                            
+                            <div class="pressure">
+                                <img class="pressureImg" id="pressureImg" src="img/pressure.png">
+                                <p class="pressureP" id="pressureP"></p>
+                                <p class="pressure_p">Pressure</p>
+                            </div>
+                        </div>
+
+                        <div class="m_right">
+
+                            <div class="WindSpeed">
+                                <img class="WindSpeedImg" id="WindSpeedImg" src="img/Wind Speed.png">
+                                <p class="WindSpeedP" id="WindSpeedP"></p>
+                                <p class="WindSpeed_p">Speed</p> <!-- Wind -->
+                            </div>
+
+                            <div class="uv">
+                                <img class="uvImg" id="uvImg" src="img/uv.png">
+                                <p class="uvP" id="uvP"></p>
+                                <p class="uv_p">UV</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="hourly">
+                <h1>Hourly Forecast:</h1>
+                <div class="day-night">
+                    
+                    <div class="day">
+                        <div class="day_one day_div">
+                            <p class="dayTime">12:00</p>
+                            <img class="dayImg_one dayImg" id="dayImg_one" src="">
+                            <p class="dayGradys dGradys" id="dayGradys"></p>
+                            <img class="dayWind_one dayWind" id="dayWind_one" src="">
+                            <p class="wind_km dGradys" id="Dwind_km_one"></p>
+                        </div>
+                        <div class="day_two day_div">
+                            <p class="dayTime">15:00</p>
+                            <img class="dayImg_two dayImg" id="dayImg_two" src="">
+                            <p class="dayGradys_two dGradys" id="dayGradys_two"></p>
+                            <img class="dayWind_two dayWind" id="dayWind_two" src="">
+                            <p class="wind_km dGradys" id="Dwind_km_two"></p>
+                        </div>
+                        <div class="day_three day_div">
+                            <p class="dayTime">18:00</p>
+                            <img class="dayImg_three dayImg" id="dayImg_three" src="">
+                            <p class="dayGradys_three dGradys" id="dayGradys_three"></p>
+                            <img class="dayWind_three dayWind" id="dayWind_three" src="">
+                            <p class="wind_km dGradys" id="Dwind_km_three"></p>
+                        </div>
+                    </div>
+                    <div class="night">
+                        <div class="night_one night_div">
+                            <p class="nightTime">21:00</p>
+                            <img class="nightImg_one nGradys nightImg" id="nightImg_one" src="">
+                            <p class="nightGradys_one dGradys" id="nightGradys_one"></p>
+                            <img class="nightWind_one dayWind" id="nightWind_one" src="">
+                            <p class="Nwind_km nGradys" id="Dwind_km_four"></p>
+                        </div>
+                        <div class="night_two night_div">
+                            <p class="nightTime">00:00</p>
+                            <img class="nightImg_two nightImg" id="nightImg_two" src="">
+                            <p class="nightGradys_two dGradys" id="nightGradys_two"></p>
+                            <img class="nightWind_two dayWind" id="nightWind_two" src="">
+                            <p class="Nwind_km nGradys" id="Dwind_km_five"></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p class="error" id="error"></p>
+
+    <script src="js/base.js"></script>
+    <script src="js/currentLocation.js"></script>
+    <script src="js/athens.js"></script>
+</body>
+</html>

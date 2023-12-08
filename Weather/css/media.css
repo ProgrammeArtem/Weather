@@ -1,0 +1,28 @@
+  @media only screen and (max-width: 768px) {
+    body {
+      padding: 27px 2%; 
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    body {
+      padding: 27px 1%; 
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .navbar {
+      gap: 15%;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .search {
+      width: 100%;
+      padding: 4% 8%;
+    }
+  
+    .searchImg {
+      margin-left: -100%;
+    }
+  }

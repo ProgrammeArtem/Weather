@@ -1,0 +1,472 @@
+body {
+    padding: 2% 5%;
+    margin: 0;
+    background: linear-gradient(to right, #fff, #61686c);
+    overflow: hidden;
+    font-family: 'Open Sans', sans-serif;  
+
+}
+
+::selection{
+  background-color: #4cbb17;
+  color: #fff;
+}
+
+.header {
+  z-index: 1000;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar {
+  display: flex;
+  gap: 7.5%;
+  list-style: none;
+}
+
+.navbar a {
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  color: #000;
+}
+
+#directionToggle {
+  display: none;
+}
+
+.toggle-label {
+  margin: 1px;
+  display: block;
+  width: 60px;
+  height: 10px;
+  background-color: #ccc;
+  position: relative;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  border: 2px solid #000;
+  padding: 10px;
+}
+
+.toggle-label::before {
+  margin: 5px;
+  content: '';
+  display: block;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+#directionToggle:checked + .toggle-label::before {
+  transform: translateX(50px);
+}
+
+.light_mode {
+  font-size: 15px;
+  padding: 1px;
+  font-weight: 900;
+}
+
+.search {
+  padding: 4% 15%;
+  height: 100%;
+  border-radius: 50px;
+  border: 1px solid #000;
+  width: 500px;
+}
+
+.search:focus{
+  outline: none;
+}
+
+.search::placeholder {
+  font-size: 15px;
+  color: #000;
+  font-weight: 300;
+}
+
+.searchImg {
+  position: absolute;
+  top: 7.5%;left: 22%;
+  transform: translate(-10%, -5%);
+  width: 30px;
+  height: 35px;
+}
+
+.searchImg:hover{
+  cursor: pointer;
+}
+
+.Location {
+  background-color: #4cbb17;
+  border-radius: 50px;
+  margin-left: 60%;
+  padding: 10px 20px;
+  width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  transition: background-color .40s ease;
+}
+
+.Location img {
+  margin-right: 10px;
+  width: 35px;
+  height: 35px;
+}
+
+.Location:hover{
+  cursor: pointer;
+  background-color: #43a515; 
+}
+
+.Location a{
+  color: #fff;
+  font-size: 19px;  
+  font-weight: bold;
+}
+
+.weather{
+  display: flex;
+  gap: 4%;
+  color: #292929;
+  transition: all .50s ease;
+  align-items: center;
+  flex-wrap:inherit;
+}
+
+.time,
+.d_forecast,
+.marks,
+.hourly{
+  box-shadow: 2px 2px 6px #000;
+  background-color: #d9d9d9;
+  border-radius: 30px;
+}
+
+.time, .marks{
+  height: 240px;
+}
+
+.d_forecast, .hourly{
+  height: 300px;
+}
+
+.time{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  width: 460px;
+  top: 174px;
+  left: 80px;
+  flex-direction: column;
+}
+
+.time h4{
+  font-size: 25px;
+  margin: 5% 0 0 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.time h1{
+  font-size: 80px;
+  padding: 1px;
+  font-weight: 900;
+  margin-top: 10px; 
+  margin-bottom: -40px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.date{
+  flex-direction: row;
+}
+
+.d_forecast{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 5% 0;
+  width: 364px;
+  top: 553px;
+  left: 80px;
+}
+
+.d_forecast h1{
+  font-size: 25px;  
+}
+
+.div_Forecast{
+  padding: 0 10%;
+  display: flex;
+  flex-direction: row;
+  gap: 10%;
+  font-weight: bold;
+  line-height: 1%;
+  align-items: center;
+}
+
+.div_Forecast img{
+  width: 50px;
+  height: 50px;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.9));
+}
+.date_one,
+.date_two,
+.date_three,
+.date_four,
+.date_five{
+  font-weight: bold;
+}
+
+.div_right{
+  display: flex;
+  flex-direction: column;
+}
+
+.marks{
+  width: 680px;
+  top: 174px;
+  left: 645px;
+}
+
+.marks_left{
+  width: 300px;
+  height: 300px;
+}
+
+.marks h1 {
+  background: linear-gradient(to bottom right, #292929, #ffffff);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-fill-color: transparent; 
+  margin-bottom: -1%;
+  margin-top: 100% 20%;
+}
+
+.containerMark{
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+}
+
+.marksD{
+  margin: -3% 3%;
+  font-size: 30px;
+}
+
+.feels{
+  font-size: 20px;
+  color: #292929;
+  margin: 0 7%;
+}
+
+.sunriseImg{
+  width: 43px;
+  height: 44px;
+}
+
+.marksSun{
+  display: flex;
+  flex-direction: column;
+  line-height: 0.5;
+  padding: 6% 10%;
+}
+
+.marksSun p{
+  line-height: 1.5;
+  margin: 1% 1%;
+  color: #292929;
+  margin: 0 5%;
+}
+
+.markSunrise{
+  display: flex;
+  flex-direction: row;
+  font-family: 'Poppins', sans-serif;
+}
+
+.timeSun{
+  font-weight: 100;
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+.containerMark{
+  margin: 0;
+  padding: 0;
+}
+
+.marks_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: -10%;
+}
+
+.marks_center img {
+  width: 50px;
+  height: auto;
+  width: 130px;
+}
+
+.marks_center p.conditions {
+  font-size: 18px; 
+}
+
+.conditionsImg img{
+  width: 500px;
+  height: 500px;
+}
+
+.hourly{  
+  margin: 3% -10%;
+  width: 750px;
+  margin-right: 10%;
+  top: 553px;
+  left: 555px;
+  border-radius: 30px;
+}
+
+.marks_right{
+  display: flex;
+  flex-direction: row;
+  padding: 2% 9%;
+}
+
+.humidity,
+.pressure,
+.uv{
+  text-align: center;
+}
+
+.humidity_p,
+.pressure_p,
+.WindSpeed_p,
+.uv_p{
+  font-size: 13px;
+  line-height: 0.5;
+}
+
+.humidityImg{
+  width: 60px;
+  height: 50px;
+}
+
+.WindSpeedImg{
+  width: 50px;
+  height: 50px;
+}
+
+.pressureImg,
+.uvImg{
+  width: 58px; 
+  height: 58px;
+}
+
+.humidityP,
+.WindSpeedP,
+.uvP{
+  font-weight: bold;
+  line-height: 0.5;
+}
+
+.pressureP{
+  font-weight: bold;
+  line-height: 1%;
+}
+
+.WindSpeed{
+  text-align: center;
+}
+
+.m_right{
+  margin: 0 50%;
+}
+
+.hourly h1{
+  text-align: center;
+  font-size: 25px;
+}
+
+.day-night{
+  display: flex;
+  flex-direction: row;
+  margin: 0 12%;
+}
+
+.day,
+.night{
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+}
+
+.night{
+  margin: 0 3%;
+}
+
+.day_div,
+.night_div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 110px;
+  height: 230px;
+  border-radius: 35px;
+}
+
+.day_div{
+  background: linear-gradient(to bottom, rgb(248,133,8,0.9), rgb(246,250,217,0.5));
+}
+
+.night_div{
+  background: linear-gradient(to bottom, rgb(68,61,100,0.9), rgb(101,130,198,0.4));
+}
+
+.dayTime,
+.nightTime{
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: -1%;
+}
+
+.dayWind{
+  margin-bottom: -10%;
+}
+
+.dGradys{
+  margin-bottom: -1%;
+  color: #292929;
+}
+
+.dGradys,
+.nGradys{
+  font-weight: bold;
+}
+
+.dayWind_one,
+.dayWind_two,
+.dayWind_three,
+.nightWind_one,
+.nightWind_two{
+  width: 65px;
+  height: 65px;
+}
+
+.dayImg,
+.nightImg{
+  width: 50px;
+  height: 50px;
+  padding: 0;
+}
